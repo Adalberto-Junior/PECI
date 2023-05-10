@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>ZERRA Health Care</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Health Care Medical Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Novena HTML Template v1.0">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename ='images/favicon.png')}}" />
+
+  <!-- theme meta -->
+  <meta name="theme-name" content="novena" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename = 'images/favicon.png')}}" />
+
+  <!-- 
+  Essential stylesheets
+  <link rel="stylesheet" href="{{url_for('static', filename = 'stylesheets/style.css')}}">
+  =====================================-->
+  <link rel="stylesheet" href="{{url_for('static' , filename ='plugins/bootstrap/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static' , filename ='plugins/icofont/icofont.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static' , filename ='plugins/slick-carousel/slick/slick.css')}}">
+  <link rel="stylesheet" href="{{url_for('static' , filename ='plugins/slick-carousel/slick/slick-theme.css')}}">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+</head>
+
+<body id="top">
+
+<header>
+	<div class="header-top-bar">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6">
+					<ul class="top-bar-info list-inline-item pl-0 mb-0">
+						<li class="list-inline-item"><a href="mailto:support@gmail.com"><i class="icofont-support-faq mr-2"></i>support@zerra.com</a></li>
+						<li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Address D8-3810-193, Aveiro, Portugal </li>
+					</ul>
+				</div>
+				<div class="col-lg-6">
+					<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
+						<a href="tel:+23-345-67890">
+							<span>Call Now : </span>
+							<span class="h4">999-999-999</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-expand-lg navigation" id="navbar">
+		<div class="container">
+			<a class="navbar-brand" href="/">
+				<img src="{{url_for('static', filename = 'images/logoR.png')}}" alt="" class="img-fluid">
+			</a>
+
+			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
+				aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="icofont-navigation-menu"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarmain">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item "><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item active"><a class="nav-link" href="/about">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="/service">Services</a></li>
+					<li class="nav-item"><a class="nav-link" href="/doctor">Doctors</a></li>
+					<li class="nav-item "><a class="nav-link" href="/blog">Blog</a></li>
+					<li class="nav-item "><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="/login" id="dropdown05" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">L/R <i class="icofont-thin-down"></i></a>
+						<ul class="dropdown-menu" aria-labelledby="dropdown05">
+							<li><a class="dropdown-item" href="/login">Login</a></li>
+							<li><a class="dropdown-item" href="/sigin">Register</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+  {% with messages = get_flashed_messages(with_categories = true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      {%if category == 'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+       {%else%}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {%endif%}   
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+    <form method="post" action="/sigin" >
+ 
+      <section class="contact-form-wrap section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="section-title text-center">
+                <h2 class="text-md mb-2">Create your account</h2>
+                <div class="divider mx-auto my-4"></div>
+                <p class="mb-5">True happiness is impossible without true health, true health is impossible without a control of gluttony.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <!--<form id="contact-form" class="contact__form " method="post" action="mail.php">
+                 form message 
+                <div class="row">
+                  <div class="col-12">
+                    <div class="alert alert-success contact__msg" style="display: none" role="alert">
+                      Your message was sent successfully.
+                    </div>
+                  </div>
+                </div>-->
+      
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input name="name" id="name" type="text" class="form-control" placeholder="Nome" required> 
+                    </div>
+                  </div>
+                  <!--
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input name="last_name" id="last_name" type="text" class="form-control" placeholder="Your Last Name" required> 
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input name="user_name" id="user_name" type="text" class="form-control" placeholder="Your User Name" required> 
+                    </div>
+                  </div>
+                -->
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input name="email" id="email" type="email" class="form-control" placeholder=" Email " required>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input name="fone" id="fone" type="tel" class="form-control" placeholder="Número de Telefone" required> 
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input name="password" id="password" type="password" class="form-control" placeholder="Your Password" required> 
+                    </div>
+                  </div>
+<!--
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input name="subject" id="subject" type="text" class="form-control" placeholder="Your Type User" required>
+                      <span class="mdl-textfield__error">Doctor or Patient</span>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input name="phone" id="phone" type="text" class="form-control" placeholder="Your Phone Number" required>
+                    </div>
+                  </div>
+                -->
+                </div>
+                <!--
+                <div class="form-group-2 mb-4">
+                  <textarea name="message" id="message" class="form-control" rows="8" placeholder="Your Message" required></textarea>
+                </div>
+              -->
+      
+                <div>
+                  <input class="btn btn-main btn-round-full" name="submit" type="submit" value="Create"></input>
+                </div>
+              <!--</form>-->
+            </div>
+          </div>
+        </div>
+        <!--
+      <div  class="subscribe-form text-lg-right mt-5 mt-lg-0">
+          <div class="col-lg-6">
+            <div class="form-group">
+             <input type="text" class="form-control" width="10px" placeholder="Your Name" required>
+            </div>
+          </div>
+          
+          <input type="text" class="form-control" placeholder="Your User Name" required>
+          <input type="text" class="form-control" placeholder="Your Email address" required>
+          <input type="password" class="form-control" placeholder="Your Password" required>
+          <input type="text" class="form-control" placeholder="Are Your?" required>
+          <button type="submit" class="btn btn-main-2 btn-round-full">Subscribe</button>
+       
+      </div>
+    -->
+         <!--Name--
+         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample3">
+            <label class="mdl-textfield__label" for="sample3">Name</label>
+           <-- <span class="mdl-textfield__error">Enter a correct Email</span>->
+          </div>
+          <br/>
+          <br/>-->
+          <!--last Nmae-
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample3">
+            <label class="mdl-textfield__label" for="sample3">Last Name</label>
+           <-- <span class="mdl-textfield__error">Minimum 8 characters</span>->
+          </div>
+          <br/>-->
+          <!--User Name
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample3">
+            <label class="mdl-textfield__label" for="sample3">User Name</label>
+           <-- <span class="mdl-textfield__error">Minimum 8 characters</span>--
+          </div>-->
+         <!--Email
+         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="email" id="sample3">
+            <label class="mdl-textfield__label" for="sample3">Email</label>
+            <span class="mdl-textfield__error">Enter a correct Email</span>
+            <--<span  class="mdl-textfield__error">Minimum 8 characters</span>
+          </div>
+          <br/>
+          <br/>-->
+          <!--Password--> <!--pattern=".{8,}"
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" id="sample3">
+            <label class="mdl-textfield__label" for="sample3">Password</label>
+            <--<span  class="mdl-textfield__error">Minimum 8 characters</span>->
+          </div>--
+          <br/>-->
+          <!--<p class="forgot-text">Forgot Password ?</p>-->
+          <!--type_user
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+            <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
+            <span class="keep-text mdl-checkbox__label">Doctor</span>
+          </label>
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+            <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
+            <span class="keep-text mdl-checkbox__label">Patient</span>
+          </label>-->
+          <!--CheckBox
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+          <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
+          <span class="keep-text mdl-checkbox__label">Keep me Signed In</span>
+        </label>
+        <div class="btn-container ">
+          <button target="_blank" class="btn btn-main-2 btn-icon btn-round-full" type="submit">  Register<i class="icofont-simple-right ml-2  "></i></button>
+        </div>-->
+        <!--
+        <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored">
+            Register
+          </button>/button-->
+          <!--<input type="submit" value="Register">
+          -->
+      </section>
+        </form>
+        <!-- footer Start -->
+<footer class="footer section gray-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 mr-auto col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<div class="logo mb-4">
+						<img src="{{url_for('static', filename = 'images/ZE.png')}}" alt="" class="img-fluid">
+					</div>
+					<p>A day with more provision starts with a good night's sleep.</p>
+
+					<ul class="list-inline footer-socials mt-4">
+						<li class="list-inline-item">
+							<a href="https://www.facebook.com/themefisher"><i class="icofont-facebook"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a href="https://twitter.com/themefisher"><i class="icofont-twitter"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a href="https://www.pinterest.com/themefisher/"><i class="icofont-linkedin"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Department</h4>
+					<div class="divider mb-4"></div>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="#!">Surgery </a></li>
+						<li><a href="#!">Wome's Health</a></li>
+						<li><a href="#!">Radiology</a></li>
+						<li><a href="#!">Cardioc</a></li>
+						<li><a href="#!">Medicine</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Support</h4>
+					<div class="divider mb-4"></div>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="#!">Terms & Conditions</a></li>
+						<li><a href="#!">Privacy Policy</a></li>
+						<li><a href="#!">Company Support </a></li>
+						<li><a href="#!">FAQuestions</a></li>
+						<li><a href="#!">Company Licence</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="widget widget-contact mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Get in Touch</h4>
+					<div class="divider mb-4"></div>
+
+					<div class="footer-contact-block mb-4">
+						<div class="icon d-flex align-items-center">
+							<i class="icofont-email mr-3"></i>
+							<span class="h6 mb-0">Support Available for 24/7</span>
+						</div>
+						<h4 class="mt-2"><a href="mailto:support@email.com">Support@email.com</a></h4>
+					</div>
+
+					<div class="footer-contact-block">
+						<div class="icon d-flex align-items-center">
+							<i class="icofont-support mr-3"></i>
+							<span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+						</div>
+						<h4 class="mt-2"><a href="tel:+23-345-67890">+351-456-6588</a></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-btm py-4 mt-5">
+			<div class="row align-items-center justify-content-between">
+				<div class="col-lg-6">
+					<div class="copyright">
+						Copyright &copy; 2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="subscribe-form text-lg-right mt-5 mt-lg-0">
+						<form action="#" class="subscribe">
+							<input type="text" class="form-control" placeholder="Your Email address" required>
+							<button type="submit" class="btn btn-main-2 btn-round-full">Subscribe</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4">
+					<a class="backtop scroll-top-to" href="#top">
+						<i class="icofont-long-arrow-up"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+   
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    <script src="{{url_for('static' , filename = 'plugins/jquery/jquery.js')}}"></script>
+    <script src="{{url_for('static' , filename = 'plugins/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static' , filename = 'plugins/slick-carousel/slick/slick.min.js')}}"></script>
+    <script src="{{url_for('static' , filename = 'plugins/shuffle/shuffle.min.js')}}"></script>
+
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA"></script>
+    <script src="{{url_for('static' , filename = 'plugins/google-map/gmap.js')}}"></script>
+    
+    <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
+    
+</body>
+</html>

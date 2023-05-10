@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>ZERRA Health Care</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Health Care Medical Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Novena HTML Template v1.0">
+
+  <!-- theme meta -->
+  <meta name="theme-name" content="novena" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename = 'images/favicon.png')}}" />
+
+  <!-- 
+  Essential stylesheets
+  <link rel="stylesheet" href="{{url_for('static', filename = 'stylesheets/style.css')}}">
+  =====================================-->
+  <link rel="stylesheet" href="{{url_for('static' , filename ='plugins/bootstrap/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static' , filename ='plugins/icofont/icofont.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static' , filename ='plugins/slick-carousel/slick/slick.css')}}">
+  <link rel="stylesheet" href="{{url_for('static' , filename ='plugins/slick-carousel/slick/slick-theme.css')}}">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+
+</head>
+
+<body id="top">
+
+
+	<header>
+		<div class="header-top-bar">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<ul class="top-bar-info list-inline-item pl-0 mb-0">
+							<li class="list-inline-item"><a href="mailto:support@gmail.com"><i class="icofont-support-faq mr-2"></i>support@zerra.com</a></li>
+							<li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Address D8-3810-193, Aveiro, Portugal </li>
+						</ul>
+					</div>
+					<div class="col-lg-6">
+						<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
+							<a href="tel:+23-345-67890">
+								<span>Call Now : </span>
+								<span class="h4">999-999-999</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navigation" id="navbar">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="{{url_for('static', filename = 'images/logoR.png')}}" alt="" class="img-fluid">
+				</a>
+	       </div>
+        </nav>
+	</header>
+
+
+
+    <section class="section confirmation">
+        <div class="container">
+            <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="confirmation-content text-center">
+                    <i class="icofont-check-circled text-lg text-color-2"></i>
+                    <h2 class="mt-3 mb-4">Are you sure you want to delete user: {{user.name}}</h2>
+                    <p></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <form method="post" action="/delete/{{user.id}}" >
+        <div align ="center">
+            <input href="/delete" class="btn btn-main btn-round-full" name="submit" type="submit" value="Yes"></input>
+        </div>
+        <!--
+        <div align ="center">
+            <input class="btn btn-main btn-round-full" name="submit" type="submit" value="Cancel" href="/print"> </input>
+        </div> -->
+
+    </form> 
+
+     <!-- 
+    Essential Scripts
+    =====================================-->
+    <script src="{{url_for('static' , filename = 'plugins/jquery/jquery.js')}}"></script>
+    <script src="{{url_for('static' , filename = 'plugins/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static' , filename = 'plugins/slick-carousel/slick/slick.min.js')}}"></script>
+    <script src="{{url_for('static' , filename = 'plugins/shuffle/shuffle.min.js')}}"></script>
+
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA"></script>
+    <script src="{{url_for('static' , filename = 'plugins/google-map/gmap.js')}}"></script>
+    
+    <script src="{{url_for('static' , filename = 'js/script.js')}}"></script>
+  </body>
+  </html>
